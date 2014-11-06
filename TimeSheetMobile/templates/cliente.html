@@ -1,0 +1,24 @@
+﻿<ion-view title="Clientes">
+    <ion-content start-y="55"
+                 padding="false"
+                 has-tabs="true"
+                 has-header="true">
+        <link rel="stylesheet" type="text/css" href="/css/cliente.css" />
+        <div id="search-box" class="bar bar-header item-input-inset">
+            <div class="item-input-wrapper">
+                <i class="icon ion-ios7-search placeholder-icon"></i>
+                <input type="search" placeholder="Pesquisar" ng-model="data.searchQuery">
+                <i class="clear-search icon ion-ios7-close-empty" ng-click="clearSearch()"></i>
+            </div>
+            <button class="button button-clear" ng-click="clearSearch()">
+                Cancelar
+            </button>
+        </div>
+
+        <ion-list>
+            <ion-item ng-repeat="cliente in clientes | filter: data.searchQuery" type="item-text-wrap" href="#tab/servico/{{cliente.codigo}}/{{cliente.nomeFantasia}}">
+                {{cliente.nome}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

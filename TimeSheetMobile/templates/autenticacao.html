@@ -1,0 +1,28 @@
+﻿<ion-view title="Login">
+    <ion-content>
+        <div class="padding" style="padding-bottom:0">
+            <h4><strong>Bem vindo ao Time Sheet da Insix!</strong></h4>
+            <p>Faça login para gerenciar seus horários e atividades.</p>
+        </div>
+        <form novalidate="novalidate">
+            <div class="list card">
+                <label class="item item-input">
+                    <span class="input-label">Usuário</span>
+                    <input type="text" ng-model="user.username" >
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Senha</span>
+                    <input type="password" placeholder="opcional" ng-model="user.password">
+                </label>
+            </div>
+            <div class="padding">
+                <button type="submit" ng-click="login(user)"
+                        class="button button-block button-balanced">
+                    Entrar
+                </button>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>
+
+

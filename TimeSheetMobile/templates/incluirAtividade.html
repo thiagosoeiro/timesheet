@@ -1,0 +1,26 @@
+﻿<ion-view title="{{titulo}}">
+    <ion-content>
+        <ion-nav-buttons side="right">
+            <a class="button" ng-click="incluir(atividadeTexto, horaInicial, horaFinal)" />{{tituloBotao}}</a>
+        </ion-nav-buttons>
+        <div class="list card">
+            <label class="item item-input">
+                <span class="input-label">Hora Inicial</span>
+                <input type="time" ng-model="horaInicial">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Hora Final</span>
+                <input type="time" ng-model="horaFinal">
+            </label>
+            </div>
+        <div class="item item-body">
+            <form name="myForm">
+                <textarea name="textarea" rows="10" placeholder="Descreva sua atividade" ng-model="atividadeTexto" required /></textarea>
+                <span class="error" ng-show="myForm.textarea.$error.required">
+                    Preencha a atividade!
+                </span><br>
+            </form>
+        </div>
+</ion-content>
+</ion-view>
+

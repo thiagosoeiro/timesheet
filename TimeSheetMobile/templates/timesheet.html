@@ -1,0 +1,83 @@
+﻿
+<ion-view title="Insix Time Sheet" hide-back-button="true" />
+<ion-nav-buttons side="right">
+    <a class="button button-icon ion-ios7-plus-outline" ng-href="#/tab/cliente"> </a>
+</ion-nav-buttons>
+<ion-content>
+    <!--<div class="bar bar-header item-input-inset">
+        <label class="item-input-wrapper">
+            <i class="icon ion-ios7-search placeholder-icon"></i>
+            <input type="date" placeholder="Search" ng-model="date" value="{{date}}"/>
+        </label>
+        <button class="button button-clear" ng-click="pesquisarAtividades(date)">Pesquisar</button>
+    </div>-->
+
+    <label class="item item-input">
+        <span class="input-label">Data</span>
+        <input type="date" ng-model="date" value="{{date}}" />    
+    </label>
+    <button class="button button-full button-positive" ng-click="pesquisarAtividades(date)">Pesquisar</button>
+    
+
+    <!--Ionic native grid-->  
+    <link rel="stylesheet" type="text/css" href="/css/native.grid.css" />  
+    <ion-item ng-repeat="atividade in atividades" type="item-text-wrap">
+        <div class="responsive-sm card" ng-click="manterAtividade(atividade)">
+            <div class="col col-10"><strong>Início:</strong> {{atividade.dataInicio | jsonDate:'HH:mm'}} | <strong>Fim:</strong> {{atividade.dataFim |  jsonDate:'HH:mm'}}</div>
+            <!--<div class="col col-10"><strong>Início:</strong> {{atividade.dataInicio | jsonDate:'HH:mm'}}</div>
+            <div class="col col-10"><strong>Fim:</strong> {{atividade.dataFim |  jsonDate:'HH:mm'}}</div>-->
+            <div class="col" style="white-space: pre-wrap;width:100%;"><strong>Cliente:</strong> {{atividade.nomeCliente}}</div>
+            <div class="col" style="white-space: pre-wrap;width:100%;"><strong>Atividade:</strong> {{atividade.descricaoAtividade}}</div>
+        </div>
+    </ion-item>
+    <!--  -->
+
+   
+    <!-- biblioteca ngTable para a grade  -->
+    <!--<link rel="stylesheet" type="text/css" href="/css/timesheet.ngtable.css" />
+    <table ng-table class="ng-table" >
+        <th>Início</th>
+        <th>Final</th>
+        <th>Cliente</th>
+        <th>Atividade</th>
+        <tr ng-repeat="atividade in atividades" ng-click="manterAtividade(atividade)">
+            <td data-title="'Início'">{{atividade.dataInicio | jsonDate: 'HH:mm'}}</td>
+            <td data-title="'Fim'">{{atividade.dataFim | jsonDate: 'HH:mm'}}</td>
+            <td data-title="'Cliente'">{{atividade.nomeCliente}}</td>
+            <td data-title="'Atividade'">{{atividade.descricaoAtividade}}</td>
+        </tr>
+    </table>-->
+    <!--  -->
+
+
+    <!-- biblioteca ui.grid para a grade-->
+    <!--<link rel="stylesheet" type="text/css" href="/css/timesheet.uigrid.css" />
+    <div id="grid1" ui-grid="gridOptions" class="Grid"></div>-->
+    <!--  -->
+    <!-- HTML Puro -->
+    <!--<link href="css/gridHTML.css" rel="stylesheet">
+    <div class="table-container">
+        <table>
+            <tr>
+                <div class="column-sort">
+                    <th>Início</th>
+                    <th>Final</th>
+                    <th>Cliente</th>
+                    <th>Atividade</th>
+                </div>
+            </tr>
+            <div class="column-sort">
+                <tr ng-repeat="atividade in atividades">
+                    <td>{{atividade.dataInicio | date: 'HH:mm'}}</td>
+                    <td>{{atividade.dataFim}}</td>
+                    <td>{{atividade.nomeCliente}}</td>
+                    <td>{{atividade.descricaoAtividade}}</td>
+                </tr>
+            </div>
+        </table>
+    </div>-->
+    <!--  -->
+
+
+</ion-content>
+</ion-view>
